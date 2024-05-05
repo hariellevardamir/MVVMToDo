@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mvvmtodoapp.ui.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_saveFragment"
+            app:destination="@id/saveFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.mvvmtodoapp.ui.fragment.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <argument
+            android:name="todo"
+            app:argType="com.example.mvvmtodoapp.data.entity.ToDos" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveFragment"
+        android:name="com.example.mvvmtodoapp.ui.fragment.SaveFragment"
+        android:label="fragment_save"
+        tools:layout="@layout/fragment_save" />
+</navigation>
